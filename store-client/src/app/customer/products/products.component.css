@@ -1,0 +1,46 @@
+.add-button button {
+  text-align: left;
+  margin-right: 10px;
+  background: #ff7a03;
+}
+
+.page {
+  min-height: 500px;
+}
+
+.header {
+  margin: 2rem 0 0;
+}
+
+.product-card {
+  margin-bottom: 1px;
+}
+
+ng-image-slider {
+  width: 230px;
+}
+
+.product-card-item {
+  text-align: right;
+}
+
+.link {
+  text-decoration: none;
+  color: #000;
+  transition: color 500ms;
+}
+
+.link:hover {
+  text-decoration: none;
+  color: #385ce8;
+}
+
+.btn {
+  margin-bottom: 1rem;
+}
+
+.comments-card-header {
+  text-align: center;
+  margin: 0 auto;
+}
+

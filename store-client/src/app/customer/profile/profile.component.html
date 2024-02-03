@@ -1,0 +1,52 @@
+<div *ngIf="isCustomerDataLoaded" class="page">
+
+  <div class="container">
+    <header class="header">
+      <h1>Profile</h1>
+    </header>
+
+    <div style="text-align: right">
+      <button mat-flat-button color="primary" (click)="openEditDialog()">Edit Info</button>
+    </div>
+
+    <div class="row">
+      <div class="col" style="text-align: center; width: 300px">
+        <img class="profile-img" [src]="previewImgURL || formatImage(customerImageProfile) ||
+        'https://www.missingdogsuk.co.uk/wp-content/plugins/wp-job-manager-resumes/assets/images/candidate.png'"
+             alt="user image">
+
+        <input type="file" style="display: none" #fileInput (change)="onFieldSelected($event)">
+
+        <button class="btn" mat-button (click)="fileInput.click()">Pick File</button>
+        <button class="btn" mat-button *ngIf="selectedFile" (click)="onUpload()">Upload</button>
+      </div>
+
+      <div class="col" style="text-align: left">
+        <h2>{{customer.username}}</h2>
+
+        <h3 style="font-style: italic">{{customer.firstname}} {{customer.lastname}}</h3>
+        <h3>{{customer.phoneNumber}}</h3>
+      </div>
+      <div style="text-align: right">
+        <button mat-flat-button color="primary" routerLink="/profile/orders">My Orders</button>
+      </div>
+
+      <mat-divider style="margin: 2rem 0"></mat-divider>
+
+      <router-outlet></router-outlet>
+
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div>
+      <h3>Contacts</h3>
+      <p>Phone: +7 (463) 563-78-87</p>
+      <p>Email: info@example.com</p>
+      <p>Address: 34 8 Marta Street, Yekaterinburg, Russia</p>
+      <mat-divider style="margin: 2rem 0"></mat-divider>
+      <p class="text-center">© 2024 Online Store. All rights reserved.</p>
+    </div>
+  </footer>
+</div>
+

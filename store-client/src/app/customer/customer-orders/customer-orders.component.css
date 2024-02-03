@@ -1,0 +1,50 @@
+.page {
+  padding-top: 0;
+}
+
+.content-empty {
+  text-align: center;
+}
+
+.sidebar {
+  padding: 0;
+  width: 150px;
+}
+
+.main {
+  width: 1150px;
+}
+
+.order-card {
+  margin-bottom: 2rem;
+  padding: 2rem;
+  text-align: center;
+  background-color: #faf9f9;
+}
+
+.product-card {
+  text-align: left;
+}
+
+ng-image-slider {
+  width: 235px;
+}
+
+.link {
+  text-decoration: none;
+  color: #000;
+  transition: color 500ms;
+}
+
+.link:hover {
+  text-decoration: none;
+  color: #385ce8;
+}
+
+.button-delete {
+  margin-bottom: 1rem;
+}
+
+.btn-reviews {
+  background-color: #e1e1e1;
+}

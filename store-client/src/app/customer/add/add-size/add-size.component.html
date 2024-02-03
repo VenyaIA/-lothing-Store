@@ -1,0 +1,23 @@
+<div class="add-product-page">
+  <div style="text-align: right">
+    <button mat-flat-button color="primary" routerLink="/profile">My profile</button>
+  </div>
+
+  <h2>Create Size</h2>
+
+  <form [formGroup]="addSizeForm">
+
+    <div>
+      <mat-form-field appearance="outline">
+        <mat-label>Title</mat-label>
+        <input matInput formControlName="title">
+      </mat-form-field>
+    </div>
+
+    <div>
+      <button [disabled]="addSizeForm.invalid" (click)="submit()" mat-flat-button color="primary">
+        Add Size
+      </button>
+    </div>
+  </form>
+</div>

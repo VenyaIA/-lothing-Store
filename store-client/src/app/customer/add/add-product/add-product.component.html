@@ -1,0 +1,99 @@
+<div class="page">
+  <div class="content">
+    <main class="main">
+      <div style="text-align: right">
+        <button mat-flat-button color="primary" routerLink="/profile">My profile</button>
+      </div>
+
+      <h2>Create Product</h2>
+
+      <form [formGroup]="addProductForm">
+        <input type="file"
+               style="display: none"
+               #fileInput
+               multiple=""
+               (change)="onFieldSelected($event)">
+
+        <img class="post-image" *ngFor='let url of previewImgURLs'
+             [src]="url || 'https://www.missingdogsuk.co.uk/wp-content/plugins/wp-job-manager-resumes/assets/images/candidate.png'"
+             alt="post image">
+
+        <button class="btn" mat-button (click)="fileInput.click()">Pick file</button>
+
+        <div>
+          <mat-form-field appearance="outline">
+            <mat-label>Title</mat-label>
+            <input matInput formControlName="title">
+          </mat-form-field>
+        </div>
+
+        <div>
+          <mat-form-field appearance="outline">
+            <mat-label>Description</mat-label>
+            <input matInput formControlName="description">
+          </mat-form-field>
+        </div>
+
+        <div>
+          <mat-form-field appearance="outline">
+            <mat-label>Price</mat-label>
+            <input matInput formControlName="price" type="number">
+          </mat-form-field>
+        </div>
+
+        <div>
+          <mat-form-field appearance="outline" >
+            <mat-label>Select brand</mat-label>
+            <mat-select formControlName="brand">
+              <mat-option *ngFor="let brand of brands" [value]="brand.id">{{brand.title}}</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+
+        <div>
+          <mat-form-field appearance="outline">
+            <mat-label>Select category</mat-label>
+            <mat-select formControlName="category">
+              <mat-option *ngFor="let category of categories" [value]="category.id">{{category.name}}</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+
+        <div>
+          <mat-form-field appearance="outline">
+            <mat-label>Select color</mat-label>
+            <mat-select formControlName="color">
+              <mat-option *ngFor="let color of colors" [value]="color.id">{{color.name}}</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+
+        <div>
+          <mat-form-field appearance="outline">
+            <mat-label>Select promotion</mat-label>
+            <mat-select formControlName="promotion">
+              <mat-option *ngFor="let promotion of promotions" [value]="promotion.id">{{promotion.title}}</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+
+        <div>
+          <mat-form-field appearance="outline">
+            <mat-label>Select size</mat-label>
+            <mat-select formControlName="size">
+              <mat-option *ngFor="let size of sizes" [value]="size.id">{{size.title}}</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+
+        <div>
+          <button [disabled]="addProductForm.invalid" (click)="submit()" mat-flat-button color="primary">
+            Add Product
+          </button>
+        </div>
+      </form>
+    </main>
+
+  </div>
+
+</div>

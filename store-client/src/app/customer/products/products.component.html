@@ -1,0 +1,110 @@
+<div *ngIf="isProductLoaded && isCustomerDataLoaded && customer.roles?.includes('ROLE_ADMIN')">
+
+  <div class="add-button">
+    <button mat-flat-button color="primary" routerLink="/profile/product/add">Add Product</button>
+    <button mat-flat-button color="primary" routerLink="/profile/brand/add">Add Brand</button>
+    <button mat-flat-button color="primary" routerLink="/profile/category/add">Add Category</button>
+    <button mat-flat-button color="primary" routerLink="/profile/color/add">Add Color</button>
+    <button mat-flat-button color="primary" routerLink="/profile/promotion/add">Add Promotion</button>
+    <button mat-flat-button color="primary" routerLink="/profile/size/add">Add Size</button>
+  </div>
+
+  <header class="header">
+    <h1>Products</h1>
+  </header>
+
+  <div class="page" *ngFor="let product of products; let i = index">
+    <mat-card class="product-card">
+      <div class="row">
+        <ng-image-slider [images]="product.imgCollection!" #nav></ng-image-slider>
+
+        <div class="col">
+          <mat-card-header>
+            <mat-card-title>
+              <a class="link" [routerLink]="['/product', product.id!]">{{product.title}}</a>
+            </mat-card-title>
+            <mat-card-subtitle>Description: {{product.description}}</mat-card-subtitle>
+          </mat-card-header>
+          <mat-card-content>
+            <div>
+              <p>Brand: {{product.brand?.title}}</p>
+              <p>Category: {{product.category?.name}}</p>
+
+              <p>
+                Color:
+                <span *ngFor="let color of product.colors; let last = last">
+                  {{color.name}}{{ !last ? ',' : '' }}
+                </span>
+              </p>
+
+              <p>
+                Size:
+                <span *ngFor="let size of product.sizes; let last = last">
+                  {{size.title}}{{ !last ? ',' : '' }}
+                </span>
+              </p>
+
+              <div *ngIf="product.promotions?.length !== 0">
+                <p *ngFor="let promotion of product.promotions">
+                  Promotion: {{promotion.title}},
+                  Discount Percent: {{promotion.discountPercent}}%
+                </p>
+              </div>
+
+            </div>
+          </mat-card-content>
+        </div>
+
+        <div class="col product-card-item">
+          <div>
+            <h2>Price: {{product.price}}$</h2>
+          </div>
+          <div *ngIf="product.promotions?.length !== 0">
+            <h2>Discounted price:  {{getTotalCost(product)}}$</h2>
+          </div>
+        </div>
+      </div>
+
+      <div style="text-align: right">
+        <button class="btn" mat-mini-fab color="primary" (click)="openEditDialog(product)">
+          <mat-icon>edit</mat-icon>
+        </button>
+      </div>
+
+      <div style="text-align: right">
+        <button class="btn" mat-mini-fab color="warn" (click)="deleteProduct(product.id!, i)">
+          <mat-icon>delete</mat-icon>
+        </button>
+      </div>
+
+
+    </mat-card>
+
+    <mat-card>
+      <mat-card-header class="comments-card-header">
+        <mat-card-title>Reviews</mat-card-title>
+      </mat-card-header>
+
+      <mat-card-content>
+        <div>
+          <p *ngFor="let review of product.reviews; let j = index">
+            <span style="font-weight: 500">{{review.username}}</span>: {{review.message}}
+            <span style="text-align: right">
+              <button mat-button color="accent" (click)="deleteReview(review.id!, i, j)">
+                <mat-icon>close</mat-icon>
+              </button>
+            </span>
+          </p>
+        </div>
+
+        {{customer.username}}
+        <mat-form-field class="w-100">
+          <mat-label>Leave a review...</mat-label>
+          <input (keyup.enter)="postReview($any($event.target).value, product.id!, i)" matInput #message
+                 maxlength="1024">
+          <mat-hint align="end">{{message.value.length}} / 1024</mat-hint>
+        </mat-form-field>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>

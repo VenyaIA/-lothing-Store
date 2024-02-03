@@ -1,0 +1,30 @@
+<div class="add-color-page">
+  <div style="text-align: right">
+    <button mat-flat-button color="primary" routerLink="/profile">My profile</button>
+  </div>
+
+  <h2>Create Color</h2>
+
+  <form [formGroup]="addColorForm">
+
+    <div>
+      <mat-form-field appearance="outline">
+        <mat-label>Name</mat-label>
+        <input matInput formControlName="name">
+      </mat-form-field>
+    </div>
+
+    <div>
+      <mat-form-field appearance="outline">
+        <mat-label>Hex Code</mat-label>
+        <input matInput formControlName="hexCode">
+      </mat-form-field>
+    </div>
+
+    <div>
+      <button [disabled]="addColorForm.invalid" (click)="submit()" mat-flat-button color="primary">
+        Add Color
+      </button>
+    </div>
+  </form>
+</div>

@@ -1,0 +1,46 @@
+.main {
+  width: 88%;
+}
+
+.sidebar {
+  width: 12%;
+  padding: 0;
+  margin-right: 2rem;
+}
+
+.content-empty {
+  text-align: center;
+}
+
+ng-image-slider {
+  width: 235px;
+}
+
+.product-card-item {
+  text-align: right;
+}
+
+.link {
+  text-decoration: none;
+  color: #000;
+  transition: color 500ms;
+}
+
+.link:hover {
+  text-decoration: none;
+  color: #385ce8;
+}
+
+.btn-product {
+  margin-bottom: 1rem;
+}
+
+.main-total-price {
+  padding-top: 1rem;
+  padding-right: 1rem;
+  text-align: right;
+}
+
+.btn-reviews {
+  background-color: #e1e1e1;
+}

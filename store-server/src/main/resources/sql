@@ -1,0 +1,160 @@
+INSERT INTO brand (description, title) VALUES ('Adidas brand', 'Adidas');
+INSERT INTO brand (description, title) VALUES ('Nike brand', 'Nike');
+
+
+INSERT INTO category (description, name) VALUES ('Clothes category', 'Clothes');
+INSERT INTO category (description, name) VALUES ('Shoes category', 'Shoes');
+
+INSERT INTO color (hex_code, name) VALUES ('#FF0000', 'Red');
+INSERT INTO color (hex_code, name) VALUES ('#FFFF00', 'Orange');
+INSERT INTO color (hex_code, name) VALUES ('#FFA500', 'Yellow');
+INSERT INTO color (hex_code, name) VALUES ('#000000', 'Black');
+
+INSERT INTO promotion (description, discount_percent, title) VALUES ('10 percent discount', 10, '10 Percent Discount');
+INSERT INTO promotion (description, discount_percent, title) VALUES ('30 percent discount', 30, '30 Percent Discount');
+
+INSERT INTO size (title) values ('M');
+INSERT INTO size (title) values ('L');
+INSERT INTO size (title) values ('XL');
+INSERT INTO size (title) values ('2XL');
+INSERT INTO size (title) values ('3XL');
+INSERT INTO size (title) values ('31');
+INSERT INTO size (title) values ('32');
+INSERT INTO size (title) values ('33');
+INSERT INTO size (title) values ('34');
+INSERT INTO size (title) values ('35');
+INSERT INTO size (title) values ('36');
+INSERT INTO size (title) values ('37');
+INSERT INTO size (title) values ('38');
+INSERT INTO size (title) values ('39');
+INSERT INTO size (title) values ('40');
+INSERT INTO size (title) values ('41');
+INSERT INTO size (title) values ('42');
+INSERT INTO size (title) values ('43');
+INSERT INTO size (title) values ('44');
+
+-- Brand Adidas
+-- Tee shirt
+INSERT INTO product (created_date, description, likes, price, title, brand_id, category_id)
+VALUES ('2024-02-03 12:00:00', 'Tee shirt Adidas Originals 3-Stripes Tee', 0, 100,
+        'Adidas Originals 3-Stripes Tee', 1, 1);
+INSERT INTO image_product (url, product_id) VALUES ('adidas Originals 3-Stripes Tee(1).jpg', 1);
+INSERT INTO image_product (url, product_id) VALUES ('adidas Originals 3-Stripes Tee(2).jpg', 1);
+INSERT INTO image_product (url, product_id) VALUES ('adidas Originals 3-Stripes Tee(3).jpg', 1);
+INSERT INTO color_products (colors_id, products_id) VALUES (1, 1);
+INSERT INTO color_products (colors_id, products_id) VALUES (4, 1);
+INSERT INTO size_products (sizes_id, products_id) VALUES (1, 1);
+INSERT INTO size_products (sizes_id, products_id) VALUES (2, 1);
+INSERT INTO size_products (sizes_id, products_id) VALUES (3, 1);
+INSERT INTO size_products (sizes_id, products_id) VALUES (4, 1);
+INSERT INTO size_products (sizes_id, products_id) VALUES (5, 1);
+INSERT INTO promotion_products (promotions_id, products_id) VALUES (1, 1);
+
+INSERT INTO product (created_date, description, likes, price, title, brand_id, category_id)
+VALUES ('2024-02-03 12:00:00', 'Tee shirt Adidas Sportswear', 0, 200,
+        'Adidas Sportswear', 1, 1);
+INSERT INTO image_product (url, product_id) VALUES ('adidas Sportswear(1).jpg', 2);
+INSERT INTO image_product (url, product_id) VALUES ('adidas Sportswear(2).jpg', 2);
+INSERT INTO image_product (url, product_id) VALUES ('adidas Sportswear(3).jpg', 2);
+INSERT INTO color_products (colors_id, products_id) VALUES (1, 2);
+INSERT INTO color_products (colors_id, products_id) VALUES (3, 2);
+INSERT INTO color_products (colors_id, products_id) VALUES (4, 2);
+INSERT INTO size_products (sizes_id, products_id) VALUES (2, 2);
+INSERT INTO size_products (sizes_id, products_id) VALUES (4, 2);
+INSERT INTO size_products (sizes_id, products_id) VALUES (5, 2);
+INSERT INTO promotion_products (promotions_id, products_id) VALUES (2, 2);
+
+-- Sneakers
+INSERT INTO product (created_date, description, likes, price, title, brand_id, category_id)
+VALUES ('2024-02-03 12:00:00', 'Sneakers Adidas CAMPUS 00S', 0, 400,
+        'Adidas CAMPUS 00S', 1, 2);
+INSERT INTO image_product (url, product_id) VALUES ('adidas CAMPUS 00S(1).jpg', 3);
+INSERT INTO image_product (url, product_id) VALUES ('adidas CAMPUS 00S(2).jpg', 3);
+INSERT INTO color_products (colors_id, products_id) VALUES (2, 3);
+INSERT INTO color_products (colors_id, products_id) VALUES (3, 3);
+INSERT INTO color_products (colors_id, products_id) VALUES (4, 3);
+INSERT INTO size_products (sizes_id, products_id) VALUES (6, 3);
+INSERT INTO size_products (sizes_id, products_id) VALUES (7, 3);
+INSERT INTO size_products (sizes_id, products_id) VALUES (8, 3);
+INSERT INTO size_products (sizes_id, products_id) VALUES (9, 3);
+INSERT INTO size_products (sizes_id, products_id) VALUES (10, 3);
+
+INSERT INTO product (created_date, description, likes, price, title, brand_id, category_id)
+VALUES ('2024-02-03 12:00:00', 'Sneakers Adidas Terrex Ax4', 0, 350,
+        'Adidas Terrex Ax4', 1, 2);
+INSERT INTO image_product (url, product_id) VALUES ('adidas Terrex Ax4(1).jpg', 4);
+INSERT INTO image_product (url, product_id) VALUES ('adidas Terrex Ax4(2).jpg', 4);
+INSERT INTO image_product (url, product_id) VALUES ('adidas Terrex Ax4(3).jpg', 4);
+INSERT INTO image_product (url, product_id) VALUES ('adidas Terrex Ax4(4).jpg', 4);
+INSERT INTO color_products (colors_id, products_id) VALUES (1, 4);
+INSERT INTO color_products (colors_id, products_id) VALUES (4, 4);
+INSERT INTO size_products (sizes_id, products_id) VALUES (12, 4);
+INSERT INTO size_products (sizes_id, products_id) VALUES (14, 4);
+INSERT INTO size_products (sizes_id, products_id) VALUES (15, 4);
+INSERT INTO size_products (sizes_id, products_id) VALUES (16, 4);
+INSERT INTO size_products (sizes_id, products_id) VALUES (17, 4);
+
+-- Brand Nike
+-- Tee shirt
+INSERT INTO product (created_date, description, likes, price, title, brand_id, category_id)
+VALUES ('2024-02-03 12:00:00', 'Tee shirt Nike Dri Fit', 0, 255,
+        'Nike Dri Fit', 2, 1);
+INSERT INTO image_product (url, product_id) VALUES ('Nike Dri Fit(1).jpg', 5);
+INSERT INTO image_product (url, product_id) VALUES ('Nike Dri Fit(2).jpg', 5);
+INSERT INTO image_product (url, product_id) VALUES ('Nike Dri Fit(3).jpg', 5);
+INSERT INTO image_product (url, product_id) VALUES ('Nike Dri Fit(4).jpg', 5);
+INSERT INTO color_products (colors_id, products_id) VALUES (1, 5);
+INSERT INTO color_products (colors_id, products_id) VALUES (4, 5);
+INSERT INTO size_products (sizes_id, products_id) VALUES (1, 5);
+INSERT INTO size_products (sizes_id, products_id) VALUES (3, 5);
+INSERT INTO size_products (sizes_id, products_id) VALUES (4, 5);
+INSERT INTO size_products (sizes_id, products_id) VALUES (5, 5);
+INSERT INTO promotion_products (promotions_id, products_id) VALUES (2, 5);
+
+INSERT INTO product (created_date, description, likes, price, title, brand_id, category_id)
+VALUES ('2024-02-03 12:00:00', 'Tee shirt Nike J air', 0, 160,
+        'Nike J air', 2, 1);
+INSERT INTO image_product (url, product_id) VALUES ('Nike J air(1).jpg', 6);
+INSERT INTO image_product (url, product_id) VALUES ('Nike J air(2).jpg', 6);
+INSERT INTO image_product (url, product_id) VALUES ('Nike J air(3).jpg', 6);
+INSERT INTO image_product (url, product_id) VALUES ('Nike J air(4).jpg', 6);
+INSERT INTO color_products (colors_id, products_id) VALUES (1, 6);
+INSERT INTO color_products (colors_id, products_id) VALUES (2, 6);
+INSERT INTO color_products (colors_id, products_id) VALUES (3, 6);
+INSERT INTO color_products (colors_id, products_id) VALUES (4, 6);
+INSERT INTO size_products (sizes_id, products_id) VALUES (2, 6);
+INSERT INTO size_products (sizes_id, products_id) VALUES (3, 6);
+INSERT INTO size_products (sizes_id, products_id) VALUES (4, 6);
+INSERT INTO size_products (sizes_id, products_id) VALUES (5, 6);
+
+-- Sneakers
+INSERT INTO product (created_date, description, likes, price, title, brand_id, category_id)
+VALUES ('2024-02-03 12:00:00', 'Sneakers Nike Pegasus', 0, 345,
+        'Nike Pegasus', 2, 2);
+INSERT INTO image_product (url, product_id) VALUES ('Nike Pegasus 38(1).jpg', 7);
+INSERT INTO image_product (url, product_id) VALUES ('Nike Pegasus 38(2).jpg', 7);
+INSERT INTO image_product (url, product_id) VALUES ('Nike Pegasus 38(3).jpg', 7);
+INSERT INTO image_product (url, product_id) VALUES ('Nike Pegasus 38(4).jpg', 7);
+INSERT INTO color_products (colors_id, products_id) VALUES (2, 7);
+INSERT INTO color_products (colors_id, products_id) VALUES (4, 7);
+INSERT INTO size_products (sizes_id, products_id) VALUES (15, 7);
+INSERT INTO size_products (sizes_id, products_id) VALUES (16, 7);
+INSERT INTO size_products (sizes_id, products_id) VALUES (17, 7);
+INSERT INTO size_products (sizes_id, products_id) VALUES (19, 7);
+INSERT INTO promotion_products (promotions_id, products_id) VALUES (2, 7);
+
+INSERT INTO product (created_date, description, likes, price, title, brand_id, category_id)
+VALUES ('2024-02-03 12:00:00', 'Sneakers Nike VENTURE RUNNER', 0, 295,
+        'Nike VENTURE RUNNER', 2, 2);
+INSERT INTO image_product (url, product_id) VALUES ('Nike VENTURE RUNNER(1).jpg', 8);
+INSERT INTO image_product (url, product_id) VALUES ('Nike VENTURE RUNNER(2).jpg', 8);
+INSERT INTO image_product (url, product_id) VALUES ('Nike VENTURE RUNNER(3).jpg', 8);
+INSERT INTO image_product (url, product_id) VALUES ('Nike VENTURE RUNNER(4).jpg', 8);
+INSERT INTO color_products (colors_id, products_id) VALUES (1, 8);
+INSERT INTO color_products (colors_id, products_id) VALUES (2, 8);
+INSERT INTO color_products (colors_id, products_id) VALUES (4, 8);
+INSERT INTO size_products (sizes_id, products_id) VALUES (7, 8);
+INSERT INTO size_products (sizes_id, products_id) VALUES (8, 8);
+INSERT INTO size_products (sizes_id, products_id) VALUES (12, 8);
+INSERT INTO size_products (sizes_id, products_id) VALUES (16, 8);
+INSERT INTO size_products (sizes_id, products_id) VALUES (17, 8);

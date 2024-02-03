@@ -1,0 +1,115 @@
+<div *ngIf="isProductLoaded && isCartLoaded" class="page">
+
+  <div class="container">
+    <header class="header">
+      <h1>Products Cart</h1>
+    </header>
+
+    <div class="content-empty" *ngIf="products.length === 0">
+      <h1>Cart is empty</h1>
+    </div>
+
+    <div class="content">
+      <main class="main">
+        <mat-card class="product-card" *ngFor="let product of products; let i = index">
+          <div class="row">
+            <ng-image-slider [images]="product.imgCollection!" #nav></ng-image-slider>
+
+            <div class="col">
+              <mat-card-header>
+                <mat-card-title>
+                  <a class="link" [routerLink]="['/product', product.id!]">{{product.title}}</a>
+                </mat-card-title>
+                <mat-card-subtitle>Description: {{product.description}}</mat-card-subtitle>
+              </mat-card-header>
+
+              <mat-card-content>
+                <div>
+                  <p>Brand: {{product.brand?.title}}</p>
+                  <p>Category: {{product.category?.name}}</p>
+
+                  <p>
+                    Color:
+                    <span *ngFor="let color of product.colors; let last = last">
+                    {{color.name}}{{ !last ? ',' : '' }}
+                  </span>
+                  </p>
+
+                  <p>
+                    Size:
+                    <span *ngFor="let size of product.sizes; let last = last">
+                    {{size.title}}{{ !last ? ',' : '' }}
+                  </span>
+                  </p>
+
+                  <div *ngIf="product.promotions?.length !== 0">
+                    <p *ngFor="let promotion of product.promotions">
+                      Promotion: {{promotion.title}},
+                      Discount Percent: {{promotion.discountPercent}}%
+                    </p>
+                  </div>
+
+                </div>
+
+                <div style="text-align: left">
+                  <button class="btn-reviews" mat-button [routerLink]="['/product', product.id!]">
+                    Reviews: {{product.reviews?.length}}
+                  </button>
+                </div>
+              </mat-card-content>
+            </div>
+
+            <div class="col product-card-item">
+              <div>
+                <h2>Price: {{product.price}}</h2>
+              </div>
+
+              <div *ngIf="product.promotions?.length !== 0">
+                <h2>Discounted price:  {{getTotalCost(product)}}</h2>
+              </div>
+
+              <div>
+                <button class="btn-product" mat-flat-button color="primary" (click)="addToOrder(product.id!)">
+                  Go to checkout
+                </button>
+              </div>
+
+              <div>
+                <button class="btn-product" mat-flat-button color="primary" (click)="deleteProductFromCart(product.id!, i)">
+                  Delete product
+                </button>
+              </div>
+            </div>
+          </div>
+        </mat-card>
+
+        <mat-card class="main-total-price" *ngIf="products.length !== 0">
+          <mat-card-title>
+            <h2>Total Price {{cart.totalPrice}}</h2>
+          </mat-card-title>
+        </mat-card>
+      </main>
+
+      <aside class="sidebar">
+
+        <div style="text-align: right" *ngIf="products.length !== 0">
+          <button mat-flat-button color="primary" (click)="clearCart()">Clear Cart</button>
+        </div>
+      </aside>
+
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div>
+      <h3>Contacts</h3>
+      <p>Phone: +7 (463) 563-78-87</p>
+      <p>Email: info@example.com</p>
+      <p>Address: 34 8 Marta Street, Yekaterinburg, Russia</p>
+      <mat-divider style="margin: 2rem 0"></mat-divider>
+      <p class="text-center">© 2024 Online Store. All rights reserved.</p>
+    </div>
+  </footer>
+
+</div>
+

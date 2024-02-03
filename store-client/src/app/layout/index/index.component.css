@@ -1,0 +1,39 @@
+mat-checkbox {
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.button-apply {
+  margin-left: 10px;
+}
+
+.button-by {
+  width: 80px;
+}
+
+.link {
+  text-decoration: none;
+  color: #000;
+  transition: color 500ms;
+}
+
+.link:hover {
+  text-decoration: none;
+  color: #385ce8;
+}
+
+ng-image-slider {
+  width: 235px;
+}
+
+mat-form-field {
+  width: 100%;
+}
+
+.form-control {
+  margin-bottom: 1rem;
+}
+
+.btn-reviews {
+  background-color: #e1e1e1;
+}

@@ -1,0 +1,101 @@
+<div *ngIf="isProductLoaded && isCustomerDataLoaded" class="page">
+
+  <div class="container">
+    <header class="header">
+      <h1>{{product.title}}</h1>
+    </header>
+
+    <div class="content">
+      <main class="main">
+        <mat-card class="product-card">
+          <div class="row">
+            <ng-image-slider [images]="product.imgCollection!" #nav></ng-image-slider>
+
+            <div class="col" >
+              <mat-card-header>
+                <mat-card-title>{{product.title}}</mat-card-title>
+                <mat-card-subtitle>Description: {{product.description}}</mat-card-subtitle>
+              </mat-card-header>
+
+              <mat-card-content>
+                <div>
+                  <p>Brand: {{product.brand?.title}}</p>
+                  <p>Category: {{product.category?.name}}</p>
+
+                  <p>
+                    Color:
+                    <span *ngFor="let color of product.colors; let last = last">
+                    {{color.name}}{{ !last ? ',' : '' }}
+                  </span>
+                  </p>
+
+                  <p>
+                    Size:
+                    <span *ngFor="let size of product.sizes; let last = last">
+                    {{size.title}}{{ !last ? ',' : '' }}
+                  </span>
+                  </p>
+
+                  <div *ngIf="product.promotions?.length !== 0">
+                    <p *ngFor="let promotion of product.promotions">
+                      Promotion: {{promotion.title}},
+                      Discount Percent: {{promotion.discountPercent}}%
+                    </p>
+                  </div>
+
+                </div>
+              </mat-card-content>
+            </div>
+
+            <div class="col product-card-item">
+              <div>
+                <h2>Price: {{product.price}}$</h2>
+              </div>
+              <div *ngIf="product.promotions?.length !== 0">
+                <h2>Discounted price:  {{getTotalCost(product)}}$</h2>
+              </div>
+
+              <button class="button-by" mat-flat-button color="primary" (click)="addProductToCart()">
+                By
+              </button>
+            </div>
+          </div>
+        </mat-card>
+
+        <mat-card>
+          <mat-card-header class="comments-card-header">
+            <mat-card-title>Reviews</mat-card-title>
+          </mat-card-header>
+
+          <mat-card-content>
+            <div>
+              <p *ngFor="let review of product.reviews">
+                <span style="font-weight: 500">{{review.username}}</span>: <span>{{review.message}}</span>
+              </p>
+            </div>
+
+            {{customer.username}}
+            <mat-form-field class="w-100">
+              <mat-label>Leave a review...</mat-label>
+              <input (keyup.enter)="postReview($any($event.target).value)" matInput #message
+                     maxlength="1024">
+              <mat-hint align="end">{{message.value.length}} / 1024</mat-hint>
+            </mat-form-field>
+          </mat-card-content>
+        </mat-card>
+      </main>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div>
+      <h3>Contacts</h3>
+      <p>Phone: +7 (463) 563-78-87</p>
+      <p>Email: info@example.com</p>
+      <p>Address: 34 8 Marta Street, Yekaterinburg, Russia</p>
+      <mat-divider style="margin: 2rem 0"></mat-divider>
+      <p class="text-center">© 2024 Online Store. All rights reserved.</p>
+    </div>
+  </footer>
+</div>
+

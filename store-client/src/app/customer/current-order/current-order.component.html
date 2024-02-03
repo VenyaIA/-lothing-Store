@@ -1,0 +1,41 @@
+<div *ngIf="isOrderProductLoaded" class="page">
+  <div class="container">
+    <header class="header">
+      <h2>Making an order</h2>
+    </header>
+    <main class="main">
+      <form [formGroup]="paymentForm">
+        <div>
+          <mat-form-field appearance="outline">
+            <mat-label>Payment Type</mat-label>
+            <input matInput formControlName="paymentType">
+          </mat-form-field>
+        </div>
+        <div>
+          <mat-form-field appearance="outline">
+            <mat-label>Status</mat-label>
+            <input matInput formControlName="status">
+          </mat-form-field>
+        </div>
+        <div >
+          <h2>Total Price: {{totalAmountOrder}}</h2>
+        </div>
+        <button [disabled]="paymentForm.invalid" mat-flat-button color="primary" (click)="submit()">Place an order</button>
+      </form>
+    </main>
+
+  </div>
+
+  <footer class="footer">
+    <div>
+      <h3>Contacts</h3>
+      <p>Phone: +7 (463) 563-78-87</p>
+      <p>Email: info@example.com</p>
+      <p>Address: 34 8 Marta Street, Yekaterinburg, Russia</p>
+      <mat-divider style="margin: 2rem 0"></mat-divider>
+      <p class="text-center">© 2024 Online Store. All rights reserved.</p>
+    </div>
+  </footer>
+
+</div>
+

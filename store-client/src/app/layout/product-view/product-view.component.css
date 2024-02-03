@@ -1,0 +1,21 @@
+.main {
+  width: 100%;
+}
+
+ng-image-slider {
+  width: 235px;
+}
+
+.product-card-item {
+  text-align: right;
+}
+
+.button-by {
+  min-width: 100px;
+}
+
+.comments-card-header {
+  text-align: center;
+  margin: 0 auto;
+}
+

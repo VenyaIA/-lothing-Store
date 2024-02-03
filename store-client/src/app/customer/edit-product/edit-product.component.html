@@ -1,0 +1,99 @@
+<div *ngIf="isProductDataLoaded">
+  <div>
+    <h2 mat-dialog-title>Edit Product</h2>
+  </div>
+
+  <form mat-dialog-content [formGroup]="productForm">
+    <mat-form-field class="w-100" appearance="outline">
+      <mat-label>Title</mat-label>
+      <input matInput formControlName="title">
+    </mat-form-field>
+
+    <mat-form-field class="w-100" appearance="outline">
+      <mat-label>Description</mat-label>
+      <input matInput formControlName="description">
+    </mat-form-field>
+
+    <mat-form-field class="w-100" appearance="outline">
+      <mat-label>Price</mat-label>
+      <input matInput type="number" formControlName="price">
+    </mat-form-field>
+
+    <div>
+      <mat-form-field appearance="outline">
+        <mat-label>Select brand</mat-label>
+        <mat-select formControlName="brand">
+          <mat-option *ngFor="let brand of brands" [value]="brand">{{brand.title}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+
+    <div>
+      <mat-form-field appearance="outline">
+        <mat-label>Select category</mat-label>
+        <mat-select formControlName="category">
+          <mat-option *ngFor="let category of categories" [value]="category">{{category.name}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+
+    <div>
+      <mat-form-field appearance="outline">
+        <mat-label>Select color</mat-label>
+        <mat-select [formControl]="colors" multiple>
+          <mat-select-trigger>
+            {{(colors.value?.[0] || '')}}
+            <span *ngIf="(colors.value?.length || 0) > 1" class="example-additional-selection">
+              (+{{(colors.value?.length || 0) - 1}} {{colors.value?.length === 2 ? 'other' : 'others'}})
+            </span>
+          </mat-select-trigger>
+          <mat-option *ngFor="let color of colorList" [value]="color.name">{{color.name}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+
+    <div>
+      <mat-form-field appearance="outline">
+        <mat-label>Select promotion</mat-label>
+        <mat-select [formControl]="promotions" multiple>
+          <mat-select-trigger>
+            {{(promotions.value?.[0] || '')}}
+            <span *ngIf="(promotions.value?.length || 0) > 1" class="example-additional-selection">
+              (+{{(promotions.value?.length || 0) - 1}} {{promotions.value?.length === 2 ? 'other' : 'others'}})
+            </span>
+          </mat-select-trigger>
+          <mat-option *ngFor="let promotion of promotionList" [value]="promotion.title">{{promotion.title}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+
+    <div>
+      <mat-form-field appearance="outline">
+        <mat-label>Select size</mat-label>
+        <mat-select [formControl]="sizes" multiple>
+          <mat-select-trigger>
+            {{(sizes.value?.[0] || '')}}
+            <span *ngIf="(sizes.value?.length || 0) > 1" class="example-additional-selection">
+              (+{{(sizes.value?.length || 0) - 1}} {{sizes.value?.length === 2 ? 'other' : 'others'}})
+            </span>
+          </mat-select-trigger>
+          <mat-option *ngFor="let size of sizeList" [value]="size.title">{{size.title}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+
+
+    <div class="row">
+      <button (click)="closeDialog()" class="w-50"
+              mat-button mat-dialog-close disableRipple>
+        Cancel
+      </button>
+      <button class="w-50" [disabled]="productForm.invalid"
+              (click)="submit()" mat-button color="primary" disableRipple>
+        Update
+      </button>
+    </div>
+
+
+  </form>
+</div>

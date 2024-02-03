@@ -1,0 +1,35 @@
+<div>
+  <div>
+    <h2 mat-dialog-title>Edit Customer Profile</h2>
+  </div>
+
+  <form mat-dialog-content [formGroup]="profileForm">
+    <mat-form-field class="w-100" appearance="outline">
+      <mat-label>First name</mat-label>
+      <input matInput formControlName="firstname">
+    </mat-form-field>
+
+    <mat-form-field class="w-100" appearance="outline">
+      <mat-label>Last name</mat-label>
+      <input matInput formControlName="lastname">
+    </mat-form-field>
+
+    <mat-form-field class="w-100" appearance="outline">
+      <mat-label>Phone number</mat-label>
+      <input matInput formControlName="phoneNumber">
+    </mat-form-field>
+
+    <div class="row">
+      <button (click)="closeDialog()" class="w-50"
+              mat-button mat-dialog-close disableRipple>
+        Cancel
+      </button>
+      <button class="w-50" [disabled]="profileForm.invalid"
+              (click)="submit()" mat-button color="primary" disableRipple>
+        Update
+      </button>
+    </div>
+
+
+  </form>
+</div>

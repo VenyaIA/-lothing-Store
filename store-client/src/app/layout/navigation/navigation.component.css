@@ -1,0 +1,17 @@
+.link-to-main {
+  cursor: pointer;
+  margin-left: 20px;
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+.cart-button {
+  margin-right: 3rem;
+}
+
+#menu-item button {
+  display: block;
+  margin: 0 auto;
+}

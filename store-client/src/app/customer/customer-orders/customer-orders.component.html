@@ -1,0 +1,110 @@
+<div *ngIf="isCustomerDataLoaded" class="page">
+
+  <header class="header">
+    <h1>My orders</h1>
+  </header>
+
+  <div class="content-empty" *ngIf="orders.length === 0">
+    <h1>The list of orders is empty</h1>
+  </div>
+
+  <div class="content">
+    <main class="main">
+      <div *ngIf="isOrdersLoaded">
+        <mat-card class="order-card" *ngFor="let order of orders; let indexOrder = index">
+
+          <div>
+            <h2> Order ID: {{order.id}}</h2>
+            <h3>Status: {{order.status}}</h3>
+          </div>
+
+          <div *ngIf="order.products?.length === 0">
+            Order is empty
+          </div>
+
+          <div *ngIf="order.products?.length !== 0">
+
+            <mat-card class="product-card" *ngFor="let product of order.products; let i = index">
+              <div class="row">
+                <ng-image-slider [images]="product.imgCollection!" #nav></ng-image-slider>
+
+                <div class="col">
+                  <mat-card-header>
+                    <mat-card-title>
+                      <a class="link" [routerLink]="['/product', product.id!]">{{product.title}}</a>
+                    </mat-card-title>
+                    <mat-card-subtitle>Description: {{product.description}}</mat-card-subtitle>
+                  </mat-card-header>
+
+                  <mat-card-content>
+                    <div>
+                      <p>Brand: {{product.brand?.title}}</p>
+                      <p>Category: {{product.category?.name}}</p>
+
+                      <p>
+                        Color:
+                        <span *ngFor="let color of product.colors; let last = last">
+                          {{color.name}}{{ !last ? ',' : '' }}
+                        </span>
+                      </p>
+
+                      <p>
+                        Size:
+                        <span *ngFor="let size of product.sizes; let last = last">
+                          {{size.title}}{{ !last ? ',' : '' }}
+                        </span>
+                      </p>
+
+                      <div *ngIf="product.promotions?.length !== 0">
+                        <p *ngFor="let promotion of product.promotions">
+                          Promotion: {{promotion.title}},
+                          Discount Percent: {{promotion.discountPercent}}%
+                        </p>
+                      </div>
+
+                    </div>
+
+                    <div style="text-align: left">
+                      <button class="btn-reviews" mat-button [routerLink]="['/product', product.id!]">
+                        Reviews: {{product.reviews?.length}}
+                      </button>
+                    </div>
+                  </mat-card-content>
+                </div>
+
+                <div class="col" style="text-align: right">
+                  <div>
+                    <h2>Price: {{product.price}}$</h2>
+                  </div>
+                  <div *ngIf="product.promotions?.length !== 0">
+                    <h2>Discounted price:  {{getTotalCost(product)}}$</h2>
+                  </div>
+                </div>
+
+                <div style="text-align: right">
+                  <button mat-mini-fab color="warn"
+                          (click)="deleteProductFromOrder(order.id!, indexOrder, product.id!, i)">
+                    <mat-icon>delete</mat-icon>
+                  </button>
+                </div>
+              </div>
+            </mat-card>
+          </div>
+
+          <div  style="text-align: right">
+              <button class="button-delete" mat-flat-button color="warn" (click)="deleteOrder(order.id!, indexOrder)">
+                Delete Order
+              </button>
+            </div>
+        </mat-card>
+      </div>
+    </main>
+
+    <aside class="sidebar">
+      <div style="text-align: right">
+        <button mat-flat-button color="primary" routerLink="/profile">My profile</button>
+      </div>
+    </aside>
+
+  </div>
+</div>

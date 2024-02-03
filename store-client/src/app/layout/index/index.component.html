@@ -1,0 +1,112 @@
+<div *ngIf="isProductLoaded && isCustomerDataLoaded" class="page">
+  <div class="container">
+    <header class="header">
+      <h1>Welcome to our online store</h1>
+    </header>
+
+    <div class="content">
+
+      <aside class="sidebar">
+        <h2>Filters</h2>
+        <section class="example-section">
+          <h3>Brands</h3>
+          <mat-checkbox *ngFor="let brand of brands" [(ngModel)]="brand.checked" class="example-margin" [value]="brand.id">
+            {{brand.title}}
+          </mat-checkbox>
+          <h3>Categories</h3>
+          <mat-checkbox *ngFor="let category of categories" [(ngModel)]="category.checked" class="example-margin" [value]="category.id">
+            {{category.name}}
+          </mat-checkbox>
+        </section>
+        <button class="button-apply" mat-flat-button color="primary" (click)="applyFilters()">
+          Apply
+        </button>
+      </aside>
+
+      <main class="main">
+        <div class="form-control">
+          <mat-form-field>
+            <input matInput type="text" placeholder="Find to product..." [(ngModel)]="searchProduct">
+          </mat-form-field>
+        </div>
+
+        <mat-card class="product-card"
+                  *ngFor="let product of products | searchProduct:searchProduct
+                | filterByBrand:selectedBrands | filterByCategory:selectedCategories; let i = index">
+          <div class="row">
+            <ng-image-slider [images]="product.imgCollection!" #nav></ng-image-slider>
+
+            <div class="col">
+              <mat-card-header>
+                <mat-card-title>
+                  <a class="link" [routerLink]="['/product', product.id!]">{{product.title}}</a>
+                </mat-card-title>
+                <mat-card-subtitle>Description: {{product.description}}</mat-card-subtitle>
+              </mat-card-header>
+
+              <mat-card-content>
+                <div>
+                  <p>Brand: {{product.brand?.title}}</p>
+                  <p>Category: {{product.category?.name}}</p>
+                  <p>
+                    Color:
+                    <span *ngFor="let color of product.colors; let last = last">
+                    {{color.name}}{{ !last ? ',' : '' }}
+                  </span>
+                  </p>
+
+                  <p>
+                    Size:
+                    <span *ngFor="let size of product.sizes; let last = last">
+                    {{size.title}}{{ !last ? ',' : '' }}
+                  </span>
+                  </p>
+
+                  <div *ngIf="product.promotions?.length !== 0">
+                    <p *ngFor="let promotion of product.promotions">
+                      Promotion: {{promotion.title}},
+                      Discount Percent: {{promotion.discountPercent}}%
+                    </p>
+                  </div>
+
+                </div>
+
+                <div style="text-align: left">
+                  <button class="btn-reviews" mat-button [routerLink]="['/product', product.id!]">
+                    Reviews: {{product.reviews?.length}}
+                  </button>
+                </div>
+              </mat-card-content>
+            </div>
+
+            <div class="col" style="text-align: right">
+              <div>
+                <h2>Price: {{product.price}}$</h2>
+              </div>
+              <div *ngIf="product.promotions?.length !== 0">
+                <h2>Discounted price:  {{getTotalCost(product)}}$</h2>
+              </div>
+
+              <button class="button-by" mat-flat-button color="primary" (click)="addProductToCart(product.id!)">
+                By
+              </button>
+            </div>
+          </div>
+        </mat-card>
+      </main>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div>
+      <h3>Contacts</h3>
+      <p>Phone: +7 (463) 563-78-87</p>
+      <p>Email: our@store.com</p>
+      <p>Address: 34 8 Marta Street, Yekaterinburg, Russia</p>
+      <mat-divider style="margin: 2rem 0"></mat-divider>
+      <p class="text-center">© 2024 Online Store. All rights reserved.</p>
+    </div>
+  </footer>
+
+</div>
+
