@@ -4,12 +4,10 @@ import com.example.storeserver.dto.ColorDTO;
 import com.example.storeserver.entity.Color;
 import com.example.storeserver.entity.Customer;
 import com.example.storeserver.entity.Product;
-import com.example.storeserver.entity.Promotion;
 import com.example.storeserver.entity.enums.EnumRole;
 import com.example.storeserver.exceptions.ColorNotFoundException;
 import com.example.storeserver.exceptions.ExceptionIsNotEnoughAuthority;
 import com.example.storeserver.exceptions.ProductNotFoundException;
-import com.example.storeserver.exceptions.PromotionNotFoundException;
 import com.example.storeserver.repositories.ColorRepository;
 import com.example.storeserver.repositories.CustomerRepository;
 import com.example.storeserver.repositories.ProductRepository;
@@ -21,12 +19,6 @@ import org.springframework.stereotype.Service;
 
 import java.security.Principal;
 import java.util.List;
-
-/**
- * api/color/create – POST create new Color
- * api/color/:colorId/delete – POST delete Color
- * api/color/colorId – GET color data
- */
 
 @Service
 public class ColorService {

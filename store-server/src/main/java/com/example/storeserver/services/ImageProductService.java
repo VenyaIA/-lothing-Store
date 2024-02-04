@@ -21,11 +21,6 @@ import org.springframework.transaction.annotation.Transactional;
 import java.security.Principal;
 import java.util.List;
 
-/**
- * api/imageProduct/:productId/upload - POST upload image to Product
- * api/imageProduct/:productId/images – GET image to Product
- */
-
 @Service
 public class ImageProductService {
     public static final Logger LOG = LoggerFactory.getLogger(ImageProductService.class);

@@ -19,11 +19,6 @@ import java.util.zip.DataFormatException;
 import java.util.zip.Deflater;
 import java.util.zip.Inflater;
 
-/**
- * api/ImageProfile/upload - POST upload image to Product
- * api/ImageProfile/:productId/image – GET image to Product
- */
-
 @Service
 public class ImageProfileService {
     public static final Logger LOG = LoggerFactory.getLogger(ImageProfileService.class);

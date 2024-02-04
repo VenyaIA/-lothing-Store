@@ -1,8 +1,6 @@
 package com.example.storeserver.controllers;
 
-import com.example.storeserver.dto.ColorDTO;
 import com.example.storeserver.dto.SizeDTO;
-import com.example.storeserver.entity.Color;
 import com.example.storeserver.entity.Size;
 import com.example.storeserver.facade.SizeFacade;
 import com.example.storeserver.payload.response.MessageResponse;

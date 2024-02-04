@@ -17,13 +17,6 @@ import org.springframework.stereotype.Service;
 
 import java.security.Principal;
 import java.util.List;
-import java.util.stream.Collectors;
-
-/**
- * api/promotion/create – POST create new Promotion
- * api/promotion/:promotionId/delete – POST delete Promotion
- * api/promotion/:product – GET product promotion data
- */
 
 @Service
 public class PromotionService {

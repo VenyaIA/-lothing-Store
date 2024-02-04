@@ -20,12 +20,6 @@ import org.springframework.stereotype.Service;
 import java.security.Principal;
 import java.util.List;
 
-/**
- * api/category/create – POST create new Category
- * api/category/:categoryId/delete – POST delete Category
- * api/category/categoryId – GET category data
- */
-
 @Service
 public class CategoryService {
     public static final Logger LOG = LoggerFactory.getLogger(CategoryService.class);

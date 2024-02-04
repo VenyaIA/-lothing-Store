@@ -16,13 +16,6 @@ import java.security.Principal;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * api/product/create – POST create new Product
- * api/product/:productId/delete – POST delete Product
- * api/product/all – GET all products
- * api/product/:productId – GET product data
- * api/product/brand/products - GET all products for brand
- */
 @Service
 public class ProductService {
     public static final Logger LOG = LoggerFactory.getLogger(ProductService.class);

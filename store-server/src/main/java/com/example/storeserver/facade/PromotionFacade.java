@@ -1,12 +1,8 @@
 package com.example.storeserver.facade;
 
 import com.example.storeserver.dto.PromotionDTO;
-import com.example.storeserver.entity.Product;
 import com.example.storeserver.entity.Promotion;
 import org.springframework.stereotype.Component;
-
-import java.util.ArrayList;
-import java.util.List;
 
 @Component
 public class PromotionFacade {

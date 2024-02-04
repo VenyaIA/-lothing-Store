@@ -1,7 +1,6 @@
 package com.example.storeserver.services;
 
 import com.example.storeserver.dto.SizeDTO;
-import com.example.storeserver.entity.Color;
 import com.example.storeserver.entity.Customer;
 import com.example.storeserver.entity.Product;
 import com.example.storeserver.entity.Size;
@@ -20,12 +19,6 @@ import org.springframework.stereotype.Service;
 
 import java.security.Principal;
 import java.util.List;
-
-/**
- * api/size/create – POST create new Size
- * api/size/:sizeId/delete – POST delete Size
- * api/size/:productId/all – all product size
- */
 
 @Service
 public class SizeService {

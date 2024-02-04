@@ -20,12 +20,6 @@ import org.springframework.stereotype.Service;
 import java.security.Principal;
 import java.util.List;
 
-/**
- * api/brand/create – POST create new Brand
- * api/brand/:brandId/delete – POST delete Brand
- * api/brand/:brandId – GET brand data
- */
-
 @Service
 public class BrandService {
     public static final Logger LOG = LoggerFactory.getLogger(BrandService.class);

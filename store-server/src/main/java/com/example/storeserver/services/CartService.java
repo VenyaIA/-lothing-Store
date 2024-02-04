@@ -1,11 +1,6 @@
 package com.example.storeserver.services;
 
-import com.example.storeserver.dto.CartDTO;
 import com.example.storeserver.entity.*;
-import com.example.storeserver.entity.enums.EnumRole;
-import com.example.storeserver.exceptions.CartNotFoundException;
-import com.example.storeserver.exceptions.ColorNotFoundException;
-import com.example.storeserver.exceptions.ExceptionIsNotEnoughAuthority;
 import com.example.storeserver.exceptions.ProductNotFoundException;
 import com.example.storeserver.repositories.CartRepository;
 import com.example.storeserver.repositories.CustomerRepository;
@@ -17,12 +12,6 @@ import org.springframework.stereotype.Service;
 
 import java.security.Principal;
 import java.util.List;
-
-/**
- * api/cart/create – POST create new Cart
- * api/cart/:cartId/clear – POST delete Cart
- * api/cart/cartId – GET cart data
- */
 
 @Service
 public class CartService {

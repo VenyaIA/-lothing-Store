@@ -12,9 +12,6 @@ public class ImageProfile {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-
-//    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-//    private Customer customer;
     private Long customerId;
 
     @Lob

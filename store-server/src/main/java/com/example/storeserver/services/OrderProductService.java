@@ -20,12 +20,6 @@ import java.security.Principal;
 import java.util.List;
 import java.util.stream.Collectors;
 
-/**
- * api/order/create – POST create new OrderProduct
- * api/order/:orderId/delete – POST delete OrderProduct
- * api/order/:orderId – GET orderProduct data
- */
-
 @Service
 public class OrderProductService {
     public static final Logger LOG = LoggerFactory.getLogger(OrderProductService.class);

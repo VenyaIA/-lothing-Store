@@ -17,13 +17,6 @@ import org.springframework.stereotype.Service;
 
 import java.security.Principal;
 import java.util.List;
-import java.util.Optional;
-
-/**
- * api/review/create – POST create new Review
- * api/review/:reviewId/delete – POST delete Review
- * api/review/:productId/all – all product review
- */
 
 @Service
 public class ReviewService {

@@ -2,7 +2,6 @@ package com.example.storeserver.entity;
 
 import com.example.storeserver.entity.enums.EnumRole;
 import lombok.Data;
-import net.minidev.json.annotate.JsonIgnore;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 

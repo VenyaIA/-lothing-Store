@@ -1,7 +1,6 @@
 package com.example.storeserver.entity;
 
 import lombok.Data;
-import net.minidev.json.annotate.JsonIgnore;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;

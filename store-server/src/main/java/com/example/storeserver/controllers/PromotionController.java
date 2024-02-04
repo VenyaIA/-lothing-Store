@@ -1,10 +1,7 @@
 package com.example.storeserver.controllers;
 
-import com.example.storeserver.dto.ProductDTO;
 import com.example.storeserver.dto.PromotionDTO;
-import com.example.storeserver.dto.SizeDTO;
 import com.example.storeserver.entity.Promotion;
-import com.example.storeserver.entity.Size;
 import com.example.storeserver.facade.PromotionFacade;
 import com.example.storeserver.payload.response.MessageResponse;
 import com.example.storeserver.services.PromotionService;

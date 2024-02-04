@@ -16,11 +16,6 @@ import org.springframework.stereotype.Service;
 
 import java.security.Principal;
 
-/**
- * api/customer/ – GET Currently logged in customer
- * api/customer/:customerId  – GET customer data
- * api/customer/update – POST update customer
- */
 @Service
 public class CustomerService {
     public static final Logger LOG = LoggerFactory.getLogger(CustomerService.class);
