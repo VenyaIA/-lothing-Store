@@ -1,62 +1,66 @@
 Главная страница с отображением всех продуктов для не авторизованных пользователей. На странице присутствует информация о товаре: название, описание, бренд, категория, цвета, доступные размеры, скидка на товар если она есть, обычная цена, цена со скидкой, отображается кнопка отзывов с их колличеством.
 При попытке нажать на кнопку купить, также на кнопку отзывов или попробовать нажать на название товара, вас перебрасывает на страницу авторизации
 
-![image](https://github.com/VenyaIA/InstaZoo/assets/137171298/080e8b3d-84de-4314-ae69-13f49d62ceed)
+![image](https://github.com/VenyaIA/Clothing-Store/assets/137171298/9667e150-4a65-4192-9dd1-85b2c093565e)
 
 Страница авторизации 
 
-![image](https://github.com/VenyaIA/InstaZoo/assets/137171298/f8c859bd-8f01-414f-9cd8-b8b8f83ac102)
+![image](https://github.com/VenyaIA/Clothing-Store/assets/137171298/71875d04-87d6-461e-acb7-ef62144fb203)
 
 Страница регистрации
 
-![image](https://github.com/VenyaIA/InstaZoo/assets/137171298/b7dbe741-eced-43b4-a3ba-c264d5479dcd)
+![image](https://github.com/VenyaIA/Clothing-Store/assets/137171298/4099bd46-a123-4b4c-a9c1-6b66ce0b3402)
 
 Главная страница с отображением всех продуктов для авторизованных пользователей также есть возможность купить данный товар, посмотреть его отзывы
 
-![image](https://github.com/VenyaIA/InstaZoo/assets/137171298/52a5599a-60fa-4663-bf20-f90fe2a859f6)
+![image](https://github.com/VenyaIA/Clothing-Store/assets/137171298/dff20058-02f2-4383-b1be-d085a802266a)
 
 Фильтрация по бренду
 
-![image](https://github.com/VenyaIA/InstaZoo/assets/137171298/c9cf7837-75a1-47b9-8a36-ffe378b3e435)
+![image](https://github.com/VenyaIA/Clothing-Store/assets/137171298/9e5570f6-649b-403d-b2ca-d3ce2189c07e)
 
 Фильтрация по бренду и категории
 
-![image](https://github.com/VenyaIA/InstaZoo/assets/137171298/f97d1f68-7604-4428-80c2-26963a4c3f75)
+![image](https://github.com/VenyaIA/Clothing-Store/assets/137171298/ee71658c-40a3-4c1e-b5d5-ba84ebd57515)
 
 Поиск по названию
 
-![image](https://github.com/VenyaIA/InstaZoo/assets/137171298/99819eff-a4e6-4d43-beb0-95f093fea3f6)
+![image](https://github.com/VenyaIA/Clothing-Store/assets/137171298/ae87fab2-92d5-49b7-b58e-a9d077c0f4b9)
 
 Отображение конкретного товара и отзывов на него, также можно самому оставить комментарий
 
-![image](https://github.com/VenyaIA/InstaZoo/assets/137171298/a353ed73-2e5d-416c-b909-b0b26f2d4ebd)
+![image](https://github.com/VenyaIA/Clothing-Store/assets/137171298/b6838a7b-5dbb-477b-9e35-7ed18dba70bc)
 
 Страница с товарами в корзине.
 Возможность удалить конкретный товар из корзины, возможность очистить все товары в корзине.
 Возможность созднания заказа и перехода к его оформлению.
 
-![image](https://github.com/VenyaIA/InstaZoo/assets/137171298/8e2ff5f7-e026-46a4-8075-94a6800d7d12)
+![image](https://github.com/VenyaIA/Clothing-Store/assets/137171298/ba9459ec-1960-4322-a4fc-3477efad4136)
 
 Оформление заказа и создание платежа и добавление товара в список личных заказов
 
-![image](https://github.com/VenyaIA/InstaZoo/assets/137171298/46735d45-1fbd-4efd-bb38-1ceec260a6f7)
+![image](https://github.com/VenyaIA/Clothing-Store/assets/137171298/56282fb0-2e93-474c-978f-649131217df3)
 
 Страница с отображением личного кабинета.
 Возможность редактирования личной информации и загрузка аватара.
 Отображение списка заказов, возможность удалить конкретный товар из заказа, и также удалить полностью заказ
 
-![image](https://github.com/VenyaIA/InstaZoo/assets/137171298/cc839a9f-c093-48c1-9f3d-ccd1d08aaf00)
+![image](https://github.com/VenyaIA/Clothing-Store/assets/137171298/ce28c993-9173-470c-94f7-75322eeac680)
 
-![image](https://github.com/VenyaIA/InstaZoo/assets/137171298/83b9404b-7cc9-4a3a-8cda-ceea5af940c2)
+![image](https://github.com/VenyaIA/Clothing-Store/assets/137171298/fdbe1e86-0340-491e-bfdd-dd1a67f056ac)
 
-![image](https://github.com/VenyaIA/InstaZoo/assets/137171298/b4133be7-d3a5-457f-b490-96e43c007178)
+![image](https://github.com/VenyaIA/Clothing-Store/assets/137171298/56b3314c-5561-49c9-8cf9-af8ae7d1aa74)
 
 У пользователя с правами администратора есть возможность редактирования всех товаров, их удаления, удаления конкретных комментариев определённого продукта.
 Добавление нового товара, категории, бренда и т. д. 
 
-![image](https://github.com/VenyaIA/InstaZoo/assets/137171298/120505df-726e-4bcf-ac39-7fb6d9d9f2c8)
+![image](https://github.com/VenyaIA/Clothing-Store/assets/137171298/7992ee8b-024e-42f0-9d91-81019c9a0db6)
 
-![image](https://github.com/VenyaIA/InstaZoo/assets/137171298/0bbfe88c-99b0-4a4b-bc9a-792afc834ea1)
+![image](https://github.com/VenyaIA/Clothing-Store/assets/137171298/e67b2440-a1f0-45c4-bb07-58ba571b5d7b)
 
-![image](https://github.com/VenyaIA/InstaZoo/assets/137171298/01671ff0-09de-4365-8e57-efbcf5d93356)
+![image](https://github.com/VenyaIA/Clothing-Store/assets/137171298/aa91d818-3af9-4ae0-b4e7-23004c59a498)
+
+![image](https://github.com/VenyaIA/Clothing-Store/assets/137171298/46a4ccfa-000b-4b48-ab37-5f794f34a5c9)
+
+
 
